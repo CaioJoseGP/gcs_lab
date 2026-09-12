@@ -1,0 +1,40 @@
+name: Pipeline de Construcao e GCS
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do codigo
+        uses: actions/checkout@v4
+
+      - name: Configurar JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: maven
+
+      - name: Executar Testes Automatizados
+        run: mvn test
+
+      - name: Empacotar Executavel
+        run: mvn package -DskipTests
+
+      - name: Gerar Javadoc
+        run: mvn javadoc:javadoc
+
+      - name: Armazenar Relatorios e Artefatos
+        uses: actions/upload-artifact@v4
+        with:
+          name: artefatos-da-construcao
+          path: |
+            target/surefire-reports/
+            target/site/apidocs/
+            target/*.jar
