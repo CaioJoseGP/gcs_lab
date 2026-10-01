@@ -1,4 +1,4 @@
-name: Pipeline de Construcao e GCS
+name: Pipeline de Construcao e GCS (Spring Boot)
 
 on:
   push:
@@ -24,7 +24,7 @@ jobs:
       - name: Executar Testes Automatizados
         run: mvn test
 
-      - name: Empacotar Executavel
+      - name: Empacotar Executavel (Spring Boot JAR)
         run: mvn package -DskipTests
 
       - name: Gerar Javadoc
