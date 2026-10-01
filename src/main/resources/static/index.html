@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora GCS</title>
+    <style>
+        body { font-family: sans-serif; max-width: 600px; margin: 40px auto; line-height: 1.6; }
+        form { background: #f4f4f4; padding: 15px; border-radius: 8px; margin-bottom: 20px; }
+        input { padding: 6px; margin: 4px; }
+        button { padding: 6px 12px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h2>Painel da Calculadora - GCS Lab</h2>
+
+    <form action="/somar" method="GET">
+        <h3>Soma</h3>
+        <input type="number" step="any" name="a" placeholder="Valor A" required>
+        <input type="number" step="any" name="b" placeholder="Valor B" required>
+        <button type="submit">Somar</button>
+    </form>
+
+    <form action="/subtrair" method="GET">
+        <h3>Subtração</h3>
+        <input type="number" step="any" name="a" placeholder="Valor A" required>
+        <input type="number" step="any" name="b" placeholder="Valor B" required>
+        <button type="submit">Subtrair</button>
+    </form>
+
+    <form action="/bhaskara" method="GET">
+        <h3>Equação do Segundo Grau (Bhaskara)</h3>
+        <input type="number" step="any" name="a" placeholder="a" required>
+        <input type="number" step="any" name="b" placeholder="b" required>
+        <input type="number" step="any" name="c" placeholder="c" required>
+        <button type="submit">Calcular Raízes</button>
+    </form>
+</body>
+</html>

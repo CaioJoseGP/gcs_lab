@@ -38,3 +38,10 @@ jobs:
             target/surefire-reports/
             target/site/apidocs/
             target/*.jar
+
+      - name: Executar Deploy no Railway
+        run: |
+          npm i -g @railway/cli
+          railway up --detach --service gcs-lab
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}

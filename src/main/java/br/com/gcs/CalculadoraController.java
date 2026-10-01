@@ -9,11 +9,6 @@ public class CalculadoraController {
 
     private final Calculadora calculadora = new Calculadora();
 
-    @GetMapping("/")
-    public String home() {
-        return "Calculadora GCS - API ativa!";
-    }
-
     @GetMapping("/somar")
     public String somar(@RequestParam double a, @RequestParam double b) {
         return "Resultado da soma: " + calculadora.somar(a, b);
