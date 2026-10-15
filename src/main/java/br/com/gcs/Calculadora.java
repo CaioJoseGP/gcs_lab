@@ -21,6 +21,14 @@ public class Calculadora {
     public double subtrair(double a, double b) { return a - b; }
 
     /**
+     * Realiza a multiplicação de dois números racionais (double).
+     * @param a Primeiro operando.
+     * @param b Segundo operando.
+     * @return O resultado da multiplicação entre a e b.
+     */
+    public double multiplicar(double a, double b) { return a * b; }
+
+    /**
      * Calcula o discriminante (delta) de uma equação do segundo grau.
      * Fórmula: Δ = b² - 4ac.
      *

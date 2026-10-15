@@ -19,6 +19,11 @@ public class CalculadoraController {
         return "Resultado da subtracao: " + calculadora.subtrair(a, b);
     }
 
+    @GetMapping("/multiplicar")
+    public String multiplicar(@RequestParam double a, @RequestParam double b) {
+        return "Resultado da multiplicacao: " + calculadora.multiplicar(a, b);
+    }
+
     @GetMapping("/bhaskara")
     public String bhaskara(@RequestParam double a, @RequestParam double b, @RequestParam double c) {
         if (a == 0) {
